@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+   / <title>Login Page</title>
+    <style>
+      /* CSS styles go here */
+      
+      body {
+        background-color: #1fa74c;
+        font-family: Arial, sans-serif;
+      }
+      
+      h1 {
+        color: #0099cc;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      
+      input[type="text"], input[type="password"] {
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        padding: 10px;
+        width: 100%;
+      }
+      .button {
+        background-color: #0036ccd5;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+      }
+      
+      .button:hover {
+        background-color: #0077b3;
+        cursor: pointer;
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HTML content goes here -->
+    <h1>Login</h1>
+    <form>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password">
+      <div class="error" id="error-message"></div>
+      <button type="button" class="button" onclick="login()">Login</button>
+    </form>
+    <script>
+        // JavaScript code goes here
+        function login() {
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          if (username === "" || password === "") {
+            document.getElementById("error-message").innerHTML = "Please enter both username and password";
+          } else {
+            // Perform login validation here
+            // Redirect to dashboard or show error message
+          }
+        }
+      </script>
+    </body>
+  </html>
+  
