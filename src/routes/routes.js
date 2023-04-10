@@ -5,6 +5,8 @@ const WorksnapsTimeEntryController = require("../controller/WorksnapsTimeEntryCo
 
 
 router.post('/students',studentController.createStudent)
-///router.get('/students/time-entries',WorksnapsTimeEntryController.getAllStudentEntry);
+router.post('/timeEntries',WorksnapsTimeEntryController.createTimeEntry)
+router.get('/students/:studentId/time-entries',WorksnapsTimeEntryController.getTimeEntriesByStudentId)
+//router.get('/students/time-entries',WorksnapsTimeEntryController.getStudentsWithTimeEntries);
 
 module.exports = router;

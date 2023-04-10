@@ -1,15 +1,11 @@
-const studentModel= require("../models/studentModel");
-const WorksnapsTimeEntry= require("../models/worksnapsTimeEntryModel")
+const studentModel = require("../models/studentModel");
+const worksnapsTimeEntryModel = require("../models/worksnapsTimeEntryModel");
 
-
-
-
-
-  const createStudent = async(req,res)=>{
-    const { firstName, lastName,displayName ,municipality} = req.body;
+const createStudent = async (req, res) => {
+  const { firstName, lastName, displayName, municipality } = req.body;
 
   // Validate input
-  if (!firstName || !lastName || !displayName ||!municipality) {
+  if (!firstName || !lastName || !displayName || !municipality) {
     return res
       .status(400)
       .send({ status: false, msg: "Missing required fields" });
@@ -17,7 +13,12 @@ const WorksnapsTimeEntry= require("../models/worksnapsTimeEntryModel")
 
   // Create new package
   try {
-    const student = await studentModel.create({  firstName,lastName,displayName,municipality});
+    const student = await studentModel.create({
+      firstName,
+      lastName,
+      displayName,
+      municipality,
+    });
     res.status(201).json(student);
   } catch (error) {
     console.error(error);
@@ -25,4 +26,4 @@ const WorksnapsTimeEntry= require("../models/worksnapsTimeEntryModel")
   }
 };
 
-  module.exports={createStudent}
+module.exports = { createStudent };

@@ -4,10 +4,11 @@ const { Schema } = mongoose;
 const WorksnapsTimeEntrySchema = new Schema({
   student: {
     type: Schema.Types.ObjectId,
-    ref: 'Student'
+    ref: 'student'
   },
   timeEntries: {
-    type: Object
+    type: Object,
+   
   }
 });
 module.exports=mongoose.model("WorksnapsTimeEntry",WorksnapsTimeEntrySchema)
